@@ -1,4 +1,4 @@
-import { StatusBar, Text, View } from "react-native";
+import { StatusBar, Text, View, Image } from "react-native";
 import {
   AdobeIcon,
   SpotifyIcon,
@@ -6,28 +6,76 @@ import {
   ProfileIcon,
   NetflixIcon,
 } from "../../components/SVG/Icon";
+import add from "../../assets/Images/add.png";
+import copy from "../../assets/Images/copy.png";
+import profile from "../../assets/Images/profile.png";
 import * as S from "./homeStyle";
+import viewController from "./homeController"
 
 const Home = () => {
+  const {passwords} = viewController()
+  console.log(passwords)
   return (
     <S.HomeContainer>
       <S.Header>
-        <ProfileIcon
-          style={{
-            backgroundColor: "red",
-       
-
-          }}
-          width={64}
-          height={64}
-        />
+       <Image source={profile} />
         <S.Title>Passwords</S.Title>
-        <AddIcon
-        style={{
-            backgroundColor: '#ffefef'
-        }}
-         width={64} height={64} />
+     <Image source={add} />
+     
       </S.Header>
+      
+      <S.Category>
+     
+      <S.CategoryTitle>
+      Priority
+      </S.CategoryTitle>
+      
+      {
+        passwords?.map((pass) => {
+        return (
+          
+            <S.Item key={pass.id}>
+         {pass.icon}
+         <S.Info>
+           <S.ItemTitle>{pass.title}</S.ItemTitle>
+           <S.ItemEmail>{pass.email}</S.ItemEmail>
+         </S.Info>
+         
+          <Image source={copy} />
+        </S.Item>
+        
+          )
+        })
+      }
+      
+      
+      </S.Category>
+      <S.Category>
+     
+      <S.CategoryTitle>
+      Entertaiment
+      </S.CategoryTitle>
+      
+      {
+        passwords?.map((pass) => {
+        return (
+          
+            <S.Item key={pass.id}>
+         {pass.icon}
+         <S.Info>
+           <S.ItemTitle>{pass.title}</S.ItemTitle>
+           <S.ItemEmail>{pass.email}</S.ItemEmail>
+         </S.Info>
+         
+          <Image source={copy} />
+        </S.Item>
+        
+          )
+        })
+      }
+      
+      
+      </S.Category>
     </S.HomeContainer>
   );
 };

@@ -6,6 +6,7 @@ import {
   ProfileIcon,
   NetflixIcon,
 } from "../../components/SVG/Icon";
+import { Ionicons, Octicons, AntDesign } from "@expo/vector-icons";
 import add from "../../assets/Images/add.png";
 import copy from "../../assets/Images/copy.png";
 import profile from "../../assets/Images/profile.png";
@@ -18,9 +19,10 @@ const Home = () => {
   return (
     <S.HomeContainer>
       <S.Header>
-       <Image source={profile} />
+      
+       <AntDesign name="user" size={32} color="black"/>
         <S.Title>Passwords</S.Title>
-     <Image source={add} />
+     <Ionicons name="add" size={32} color="black"/> 
      
       </S.Header>
       
@@ -41,7 +43,7 @@ const Home = () => {
            <S.ItemEmail>{pass.email}</S.ItemEmail>
          </S.Info>
          
-          <Image source={copy} />
+         <Ionicons name="copy-outline" size={24} color="black"/>
         </S.Item>
         
           )
@@ -67,7 +69,7 @@ const Home = () => {
            <S.ItemEmail>{pass.email}</S.ItemEmail>
          </S.Info>
          
-          <Image source={copy} />
+          <Ionicons name="copy-outline" size={24} color="black"/>
         </S.Item>
         
           )

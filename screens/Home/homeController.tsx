@@ -35,8 +35,27 @@ const homeViewController = () => {
       },
     ]
 
+  const passwordsList = [
+    {
+      id: 1,
+      sectionTitle: 'Priority',
+      child: passwords
+    },
+    {
+      id: 2,
+      sectionTitle: 'Entertaiment',
+      child: passwords
+    },
+    {
+      id: 3,
+      sectionTitle: 'Work',
+      child: passwords
+    },
+  ]
+
     return{
-        passwords
+        passwords,
+        passwordsList
     }
 }
 

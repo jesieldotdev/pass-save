@@ -17,7 +17,7 @@ export const Header = styled.View`
   /*width: 100%;*/
    /*background-color: #f4f4f4; */
   margin: 0;
-  margin-top: 44px;
+  margin-top: 16px;
   justify-content: space-between;
   
   

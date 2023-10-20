@@ -4,6 +4,9 @@ import {
   AddIcon,
   ProfileIcon,
   NetflixIcon,
+  Behance,
+  Steam,
+  Medium,
 } from "../../components/SVG/Icon";
 
 export interface PasswordList {
@@ -19,19 +22,19 @@ const homeViewController = () => {
         id: 1,
         title: 'Adobe',
         email: 'work.stive@gmail.com',
-        icon: <AdobeIcon width={46} height={46}/>
+        icon: <AdobeIcon width={58} height={58}/>
       },
       {
         id: 2,
         title: 'Spotify',
         email: 'chill.stive@gmail.com',
-        icon: <SpotifyIcon width={46} height={46}/>
+        icon: <SpotifyIcon width={58} height={58}/>
       },
       {
         id: 3,
         title: 'Netflix',
         email: 'chill.stive@gmail.com',
-        icon: <NetflixIcon width={46} height={46}/>
+        icon: <NetflixIcon width={58} height={58}/>
       },
     ]
 
@@ -39,17 +42,57 @@ const homeViewController = () => {
     {
       id: 1,
       sectionTitle: 'Priority',
-      child: passwords
+      child: [
+        {
+          id: 1,
+          title: 'Behance',
+          email: 'design.steve@gmail.com',
+          icon: <Behance width={58} height={58}/>
+        },
+        {
+          id: 2,
+          title: 'Adobe',
+          email: 'work.steve@gmail.com',
+          icon: <AdobeIcon width={58} height={58}/>
+        },
+
+      ]
     },
     {
       id: 2,
       sectionTitle: 'Entertaiment',
-      child: passwords
+      child: [
+        {
+          id: 1,
+          title: 'Netflix',
+          email: 'chill.stive@gmail.com',
+          icon: <NetflixIcon width={58} height={58}/>
+        },
+        {
+          id: 2,
+          title: 'Spotify',
+          email: 'chill.stive@gmail.com',
+          icon: <SpotifyIcon width={58} height={58}/>
+        },
+        // {
+        //   id: 3,
+        //   title: 'Steam',
+        //   email: 'chill.stive@gmail.com',
+        //   icon: <Steam width={58} height={58}/>
+        // },
+      ]
     },
     {
       id: 3,
       sectionTitle: 'Work',
-      child: passwords
+      child: [
+        {
+          id: 1,
+          title: 'Medium',
+          email: 'work.steve@gmail.com',
+          icon: <Medium width={58} height={58}/>
+        },
+      ]
     },
   ]
 

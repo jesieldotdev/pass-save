@@ -2,6 +2,7 @@ import { StyleProp, ViewStyle } from "react-native";
 import Svg, {
   Circle,
   Defs,
+  G,
   LinearGradient,
   Path,
   Rect,
@@ -11,7 +12,7 @@ import Svg, {
 interface IconProps {
   width?: number;
   height?: number;
-  style?: StyleProp<ViewStyle>
+  style?: StyleProp<ViewStyle>;
 }
 
 function AdobeIcon({ width, height, style }: IconProps) {
@@ -21,7 +22,7 @@ function AdobeIcon({ width, height, style }: IconProps) {
       height={height || 100}
       viewBox="0 0 62 63"
       fill="none"
-      style={style || null }
+      style={style || null}
     >
       <Path
         d="M31 4.75C16.0389 4.75 3.875 16.9139 3.875 31.875C3.875 46.8361 16.0389 59 31 59C45.9611 59 58.125 46.8361 58.125 31.875C58.125 16.9139 45.9611 4.75 31 4.75Z"
@@ -42,7 +43,7 @@ function SpotifyIcon({ width, height, style }: IconProps) {
       height={height || 100}
       viewBox="0 0 62 63"
       fill="none"
-      style={style || null }
+      style={style || null}
     >
       <Circle cx="28" cy="27.25" r="27.125" fill="#1ED760" />
       <Path
@@ -87,7 +88,7 @@ function ProfileIcon({ width, height, style }: IconProps) {
       height={height || 100}
       viewBox="0 0 62 63"
       fill="none"
-      style={style || null }
+      style={style || null}
     >
       <Path
         id="Vector"
@@ -166,5 +167,91 @@ function NetflixIcon({ width, height }: IconProps) {
     </Svg>
   );
 }
+function Behance({ width, height }: IconProps) {
+  return (
+    <Svg width="62" height="63" viewBox="0 0 62 63" fill="none">
+      <G id="behance">
+        <Circle id="bg" cx="31" cy="31.5" r="27.125" fill="#105DFB" />
+        <G id="behance_2">
+          <Path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M13.3223 43.0465V19.3779H24.2639C27.7783 19.3779 30.6273 22.227 30.6273 25.7414C30.6273 27.9747 29.9406 29.3581 27.4227 30.7773C30.4358 32.1502 31.2726 34.0529 31.2726 36.707C31.2726 40.2973 28.083 43.0465 24.4927 43.0465H13.3223ZM17.9523 23.2959V28.9873H23.3712C23.3712 28.9873 26.005 28.9873 26.005 26.1416C26.005 23.2959 23.3712 23.2959 23.3712 23.2959H17.9523ZM17.9523 39.038V32.8925H23.7648C24.7032 32.8925 26.671 33.3769 26.671 36.2832C26.671 38.4386 24.7335 39.0179 23.7648 39.038H17.9523Z"
+            fill="white"
+          />
+          <Path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M41.172 25.8994C37.8419 25.8994 32.9073 28.291 32.9073 34.6484C32.9073 38.5195 35.0265 43.4882 41.3839 43.4882C46.4698 43.4882 48.811 39.7545 49.3458 37.8877H44.5626C44.3204 38.7353 43.382 39.6738 41.3839 39.6738C38.4777 39.6738 37.4484 37.1914 37.297 35.9502H49.3458V34.6484C49.3458 28.291 44.5021 25.8994 41.172 25.8994ZM41.172 29.5322C38.4595 29.5322 37.4585 31.7724 37.297 32.8925H44.5626C44.5626 31.7724 43.8845 29.5322 41.172 29.5322Z"
+            fill="white"
+          />
+          <Path
+            d="M35.3898 20.7226V23.6591H46.8029V20.7226H35.3898Z"
+            fill="white"
+          />
+        </G>
+      </G>
+    </Svg>
+  );
+}
+function Steam({ width, height }: IconProps) {
+  return (
+    <Svg width="62" height="63" viewBox="0 0 62 63" fill="none">
+      <G id="steam">
+        <Path
+          id="bg"
+          d="M4.97972 39.3022C8.33302 50.4805 18.706 58.625 30.9828 58.625C45.9728 58.625 58.1251 46.4804 58.1251 31.5C58.1251 16.5193 45.9728 4.375 30.9828 4.375C16.5983 4.375 4.82828 15.5577 3.89868 29.6979C3.89868 33.7604 3.89868 35.4557 4.97972 39.3022Z"
+          fill="url(#paint0_linear_252_3329)"
+        />
+        <Path
+          id="steam_2"
+          d="M29.5868 24.8406L22.945 34.4826C21.3793 34.4115 19.8032 34.8544 18.4948 35.7143L3.91044 29.7142C3.91044 29.7142 3.57296 35.2626 4.97936 39.3977L15.2897 43.6492C15.8074 45.9613 17.3945 47.9892 19.7359 48.9648C23.5668 50.5644 27.9839 48.7413 29.5775 44.9112C29.9922 43.91 30.1856 42.8599 30.1576 41.8122L39.8939 35.0298C45.581 35.0298 50.2034 30.3964 50.2034 24.7064C50.2034 19.016 45.581 14.3868 39.8939 14.3868C34.401 14.3868 29.279 19.1798 29.5868 24.8406ZM27.9909 44.2453C26.7575 47.2046 23.3546 48.6086 20.3967 47.3769C19.0321 46.8088 18.0018 45.768 17.4075 44.527L20.7636 45.917C22.945 46.8251 25.4477 45.7913 26.3545 43.612C27.264 41.4303 26.2321 38.9251 24.0519 38.017L20.5826 36.5804C21.9213 36.0729 23.4431 36.0542 24.865 36.6456C26.2985 37.2417 27.4108 38.3639 28.0002 39.7982C28.5897 41.2324 28.5874 42.8157 27.9909 44.2453ZM39.8939 31.5839C36.108 31.5839 33.0256 28.4988 33.0256 24.7064C33.0256 20.9171 36.108 17.8311 39.8939 17.8311C43.6822 17.8311 46.7646 20.9171 46.7646 24.7064C46.7646 28.4988 43.6822 31.5839 39.8939 31.5839ZM34.7474 24.696C34.7474 21.8431 37.0586 19.5292 39.9056 19.5292C42.755 19.5292 45.0661 21.8431 45.0661 24.696C45.0661 27.5491 42.755 29.8609 39.9056 29.8609C37.0586 29.8609 34.7474 27.5491 34.7474 24.696Z"
+          fill="white"
+        />
+      </G>
+      <Defs>
+        <linearGradient
+          id="paint0_linear_252_3329"
+          x1="31.0119"
+          y1="4.375"
+          x2="31.0119"
+          y2="58.625"
+          gradientUnits="userSpaceOnUse"
+        >
+          <Stop stop-color="#111D2E" />
+          <Stop offset="0.21248" stop-color="#051839" />
+          <Stop offset="0.40695" stop-color="#0A1B48" />
+          <Stop offset="0.5811" stop-color="#132E62" />
+          <Stop offset="0.7376" stop-color="#144B7E" />
+          <Stop offset="0.87279" stop-color="#136497" />
+          <Stop offset="1" stop-color="#1387B8" />
+        </linearGradient>
+      </Defs>
+    </Svg>
+  );
+}
+function Medium({ width, height }: IconProps) {
+  return (
+    <Svg width="62" height="62" viewBox="0 0 62 62" fill="none">
+      <G id="medium">
+        <Circle id="bg" cx="31" cy="31" r="27.125" fill="#12100E" />
+        <Path
+          id="medium_2"
+          d="M16.8926 38.75L12.4727 44.3809V45.0166H23.3711V44.3809L18.9814 38.75V24.2188L28.3965 45.0166H29.7285L37.7812 24.2188V41.293L34.4814 44.3809V45.0166H48.9219V44.3809L45.7129 41.293V19.7988L48.9219 16.8018V16.0752H38.9619L31.6963 33.9062L23.583 16.0752H12.9873V16.8018L16.8926 21.4336V38.75Z"
+          fill="white"
+        />
+      </G>
+    </Svg>
+  );
+}
 
-export { AdobeIcon, SpotifyIcon, AddIcon, ProfileIcon, NetflixIcon };
+export {
+  AdobeIcon,
+  SpotifyIcon,
+  AddIcon,
+  ProfileIcon,
+  NetflixIcon,
+  Behance,
+  Steam,
+  Medium,
+};

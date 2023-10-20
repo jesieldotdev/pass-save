@@ -1,11 +1,6 @@
 import {
-  StatusBar,
-  Text,
-  View,
-  Image,
+
   FlatList,
-  ScrollView,
-  SectionList,
 } from "react-native";
 
 import { Ionicons, Octicons, AntDesign } from "@expo/vector-icons";
@@ -34,10 +29,14 @@ const Home = () => {
               <S.Item>
                 {pass.icon}
                 <S.Info>
-                  <S.Title>{pass.title}</S.Title>
-                  <S.Title>{pass.email}</S.Title>
+                  <S.ItemTitle>{pass.title}</S.ItemTitle>
+                  <S.ItemTitle>{pass.email}</S.ItemTitle>
                 </S.Info>
-                <Ionicons name="copy-outline" size={24} color="black" />
+                <Ionicons style={{
+                  display: 'flex',
+                  verticalAlign: 'middle',
+                  margin: 'auto'
+                }} name="copy-outline" size={32} color="black" />
               </S.Item>
             ))}
           </S.Category>

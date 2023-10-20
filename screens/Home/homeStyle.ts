@@ -19,14 +19,14 @@ export const Header = styled.View`
   margin: 0;
   margin-top: 16px;
   justify-content: space-between;
-  
+  padding-bottom: 8px;
   
 `;
 
 export const Title = styled.Text`
   color: #000;
   font-size: 24px;
-  font-weight: 300;
+  font-weight: 400;
 `;
 
 export const Category = styled.View`
@@ -39,12 +39,13 @@ export const CategoryTitle = styled.Text`
 font-size: 20px;
 font-style: normal;
 font-weight: 400;
+margin-bottom: 24px;
 
 `
 export const Item = styled.View`
   display: flex;
   flex-direction: row;
-  /*background-color: #f4f4f4 ;*/
+  /* background-color: #f4f4f4 ; */
   justify-content: space-between;
   margin: 0;
   margin-top: 16px;
@@ -52,10 +53,9 @@ export const Item = styled.View`
 
 export const Info = styled.View`
   display: flex;
+  flex: 1;
   flex-direction: column;
-  /*background-color: #f4f4f4 ; */
-  width: max-content;
-  margin-left: 0px;
+  margin-left: 20px;
 `
 
 

@@ -8,71 +8,72 @@ import {
   Steam,
   Medium,
 } from "../../components/SVG/Icon";
+import { Image, Vibration} from 'react-native';
+
 
 export interface PasswordList {
-  id: number
-  title: string 
-  email: string 
-  icon: any
+  id: number;
+  title: string;
+  email: string;
+  icon: any;
 }
 
 const homeViewController = () => {
   const passwords = [
-      {
-        id: 1,
-        title: 'Adobe',
-        email: 'work.stive@gmail.com',
-        icon: <AdobeIcon width={58} height={58}/>
-      },
-      {
-        id: 2,
-        title: 'Spotify',
-        email: 'chill.stive@gmail.com',
-        icon: <SpotifyIcon width={58} height={58}/>
-      },
-      {
-        id: 3,
-        title: 'Netflix',
-        email: 'chill.stive@gmail.com',
-        icon: <NetflixIcon width={58} height={58}/>
-      },
-    ]
+    {
+      id: 1,
+      title: "Adobe",
+      email: "work.stive@gmail.com",
+      icon: <AdobeIcon width={58} height={58} />,
+    },
+    {
+      id: 2,
+      title: "Spotify",
+      email: "chill.stive@gmail.com",
+      icon: <SpotifyIcon width={58} height={58} />,
+    },
+    {
+      id: 3,
+      title: "Netflix",
+      email: "chill.stive@gmail.com",
+      icon: <NetflixIcon width={58} height={58} />,
+    },
+  ];
 
   const passwordsList = [
     {
       id: 1,
-      sectionTitle: 'Priority',
+      sectionTitle: "Priority",
       child: [
         {
           id: 1,
-          title: 'Behance',
-          email: 'design.steve@gmail.com',
-          icon: <Behance width={58} height={58}/>
+          title: "Behance",
+          email: "design.steve@gmail.com",
+          icon: <Behance width={58} height={58} />,
         },
         {
           id: 2,
-          title: 'Adobe',
-          email: 'work.steve@gmail.com',
-          icon: <AdobeIcon width={58} height={58}/>
+          title: "Adobe",
+          email: "work.steve@gmail.com",
+          icon: <AdobeIcon width={58} height={58} />,
         },
-
-      ]
+      ],
     },
     {
       id: 2,
-      sectionTitle: 'Entertaiment',
+      sectionTitle: "Entertaiment",
       child: [
         {
           id: 1,
-          title: 'Netflix',
-          email: 'chill.stive@gmail.com',
-          icon: <NetflixIcon width={58} height={58}/>
+          title: "Netflix",
+          email: "chill.stive@gmail.com",
+          icon: <NetflixIcon width={58} height={58} />,
         },
         {
           id: 2,
-          title: 'Spotify',
-          email: 'chill.stive@gmail.com',
-          icon: <SpotifyIcon width={58} height={58}/>
+          title: "Spotify",
+          email: "chill.stive@gmail.com",
+          icon: <SpotifyIcon width={58} height={58} />,
         },
         // {
         //   id: 3,
@@ -80,26 +81,80 @@ const homeViewController = () => {
         //   email: 'chill.stive@gmail.com',
         //   icon: <Steam width={58} height={58}/>
         // },
-      ]
+      ],
     },
     {
       id: 3,
-      sectionTitle: 'Work',
+      sectionTitle: "Work",
       child: [
         {
           id: 1,
-          title: 'Medium',
-          email: 'work.steve@gmail.com',
-          icon: <Medium width={58} height={58}/>
+          title: "Medium",
+          email: "work.steve@gmail.com",
+          icon: <Medium width={58} height={58} />,
         },
-      ]
+        {
+          id: 2,
+          title: "Google",
+          email: "work.steve@gmail.com",
+          icon: (
+            <Image
+              style={{
+                width: 52,
+                height: 52
+              }}
+              source={require("../../assets/Images/google.png")}
+            />
+          ),
+        },
+      ],
     },
-  ]
+    {
+      id: 4,
+      sectionTitle: "Social",
+      child: [
+        {
+          id: 1,
+          title: "Medium",
+          email: "work.steve@gmail.com",
+          icon: <Medium width={58} height={58} />,
+        },
+        {
+          id: 2,
+          title: "Google",
+          email: "work.steve@gmail.com",
+          icon: (
+            <Image
+            
+              style={{
+                width: 52,
+                height: 52
+              }}
+              source={require("../../assets/Images/google.png")}
+            />
+          ),
+        },
+      ],
+    },
+  ];
+  
+  const ONE_SECOND_IN_MS = 1000
+  
+  const PATTERN = [
+    1 * ONE_SECOND_IN_MS,
+    // 2 * ONE_SECOND_IN_MS 
+  ];
+  
+  function vibrate(){
+    return Vibration.vibrate(PATTERN, true)
+  }
 
-    return{
-        passwords,
-        passwordsList
-    }
-}
+  return {
+    passwords,
+    passwordsList,
+    vibrate,
+    Vibration
+  };
+};
 
-export default homeViewController
+export default homeViewController;

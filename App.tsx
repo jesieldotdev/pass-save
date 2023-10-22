@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './screens/Home/home';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
   useFonts,
   Poppins_100Thin,
@@ -22,6 +23,81 @@ import {
   Poppins_900Black,
   Poppins_900Black_Italic,
 } from '@expo-google-fonts/poppins';
+
+const Tab = createBottomTabNavigator();
+
+function MyTabs() {
+  // const {theme, setTheme} = useContext(MyContext)
+
+  const header = {
+    backgroundColor:  "#f4f4f4",
+  }
+  const headerTitle = {
+    color: "#363636",
+  }
+  return (
+    <Tab.Navigator
+    screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+
+            if (route.name === 'home') {
+              iconName = focused
+                ? 'home-outline'
+                : 'home-outline';
+            } else if (route.name === 'orders') {
+              iconName = focused ? 'list-outline' : 'list-outline';
+            }
+           else if (route.name === 'favorites') {
+              iconName = focused ? 'heart-outline' : 'heart-outline';
+            }
+           else if (route.name === 'settings') {
+              iconName = focused ? 'cog-outline' : 'cog-outline';
+            }
+
+            // You can return any component that you like here!
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+          tabBarActiveTintColor: '#000',
+          tabBarInactiveTintColor: '#c4c4c4',
+          tabBarStyle: styles.tab,
+          freezeOnBlur: true,
+          tabBarActiveBackgroundColor: '#c4c4c4',
+          // tabBarItemStyle: styles.tabItem
+          
+          
+        })}
+    >
+      <Tab.Screen name="home" component={Home} options={{
+            title: 'Citações',
+            headerShown: true,
+            headerStyle: header,
+            // headerTitleStyle: headerTitle
+
+          }} />
+     
+
+          }} />
+      <Tab.Screen name="favorites" component={Favorites} options={{
+            title: 'Favoritos',
+            headerShown: false
+
+          }} />
+      <Tab.Screen name="settings" component={Settings} options={{
+            title: 'Configurações',
+            headerShown: true,
+            headerStyle: header,
+            headerTitleStyle: headerTitle
+
+          }} />
+      {/* <Tab.Screen name="teste" component={MessageView} options={{
+            title: 'Teste',
+            headerShown: false
+
+          }} /> */}
+    </Tab.Navigator>
+  );
+}
 
 export default function App() {
   return (

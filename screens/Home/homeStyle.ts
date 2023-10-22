@@ -5,7 +5,7 @@ export const HomeContainer = styled.View`
   /*display: flex;*/
   /*flex-direction: row;*/
   width: 100%;
-
+  font-family: 'Poppins_400Regular';
   flex: 1;
   margin: 0;
   padding: 16px;
@@ -23,7 +23,7 @@ export const Header = styled.View`
   justify-content: space-between;
   padding-bottom: 8px;
   /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.2);
+  /* background: rgba(255, 255, 255, 0.2); */
   /*border-radius: 16px;*/
   /*box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);*/
   /*backdrop-filter: blur(5px);*/
@@ -54,7 +54,7 @@ export const Item = styled.View`
   /* background-color: #f4f4f4 ; */
   justify-content: space-between;
   margin: 0;
-  /*margin-top: 16px;*/
+  margin-top: 8px;
   padding: 8px;
   vertical-align: middle;
 `;

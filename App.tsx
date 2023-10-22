@@ -23,6 +23,9 @@ import {
   Poppins_900Black,
   Poppins_900Black_Italic,
 } from '@expo-google-fonts/poppins';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import {Ionicons} from "@expo/vector-icons"
 
 const Tab = createBottomTabNavigator();
 
@@ -60,7 +63,7 @@ function MyTabs() {
           },
           tabBarActiveTintColor: '#000',
           tabBarInactiveTintColor: '#c4c4c4',
-          tabBarStyle: styles.tab,
+          // tabBarStyle: styles.tab,
           freezeOnBlur: true,
           tabBarActiveBackgroundColor: '#c4c4c4',
           // tabBarItemStyle: styles.tabItem
@@ -69,16 +72,16 @@ function MyTabs() {
         })}
     >
       <Tab.Screen name="home" component={Home} options={{
-            title: 'Citações',
-            headerShown: true,
-            headerStyle: header,
+            title: 'Passwords',
+            headerShown: false,
+            // headerStyle: header,
             // headerTitleStyle: headerTitle
 
           }} />
      
 
-          }} />
-      <Tab.Screen name="favorites" component={Favorites} options={{
+       
+      {/* <Tab.Screen name="favorites" component={Favorites} options={{
             title: 'Favoritos',
             headerShown: false
 
@@ -89,7 +92,7 @@ function MyTabs() {
             headerStyle: header,
             headerTitleStyle: headerTitle
 
-          }} />
+          }} /> */}
       {/* <Tab.Screen name="teste" component={MessageView} options={{
             title: 'Teste',
             headerShown: false
@@ -100,11 +103,27 @@ function MyTabs() {
 }
 
 export default function App() {
+
+  let [fontsLoaded, fontError] = useFonts({
+    Poppins_100Thin,
+    Poppins_100Thin_Italic,
+    Poppins_200ExtraLight,
+    Poppins_300Light,
+    Poppins_400Regular,
+    Poppins_500Medium,
+    Poppins_600SemiBold,
+    Poppins_700Bold,
+    Poppins_800ExtraBold,
+    Poppins_900Black
+  });
+
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
   return (
-    <View style={styles.container}>
-      <Home />
-      {/* <StatusBar style="auto" /> */}
-    </View>
+    <NavigationContainer>
+      <MyTabs />
+    </NavigationContainer>
   );
 }
 

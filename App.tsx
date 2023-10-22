@@ -26,6 +26,7 @@ import {
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import {Ionicons} from "@expo/vector-icons"
+import Analyses from './screens/Analyzis/analysis';
 
 const Tab = createBottomTabNavigator();
 
@@ -34,6 +35,7 @@ function MyTabs() {
 
   const header = {
     backgroundColor:  "#f4f4f4",
+    marginTop: 0
   }
   const headerTitle = {
     color: "#363636",
@@ -51,7 +53,7 @@ function MyTabs() {
             } else if (route.name === 'orders') {
               iconName = focused ? 'list-outline' : 'list-outline';
             }
-           else if (route.name === 'favorites') {
+           else if (route.name === 'analysis') {
               iconName = focused ? 'heart-outline' : 'heart-outline';
             }
            else if (route.name === 'settings') {
@@ -59,15 +61,25 @@ function MyTabs() {
             }
 
             // You can return any component that you like here!
-            return <Ionicons name={iconName} size={size} color={color} />;
+            return <Ionicons name={iconName} size={32} color={color} />;
           },
-          tabBarActiveTintColor: '#000',
-          tabBarInactiveTintColor: '#c4c4c4',
-          // tabBarStyle: styles.tab,
-          freezeOnBlur: true,
-          tabBarActiveBackgroundColor: '#c4c4c4',
+          // tabBarActiveTintColor: '#000',
+          // tabBarInactiveTintColor: '#c4c4c4',
+          tabBarStyle: header,
+          // freezeOnBlur: true,
+          // tabBarActiveBackgroundColor: '#c4c4c4',
           // tabBarItemStyle: styles.tabItem
+          tabBarLabelStyle: {
+            fontSize: 14,
+
+          },
+          tabBarIconStyle: {
+            width: 32,
+            height: 32
+          },
           
+
+
           
         })}
     >
@@ -81,12 +93,12 @@ function MyTabs() {
      
 
        
-      {/* <Tab.Screen name="favorites" component={Favorites} options={{
-            title: 'Favoritos',
+      <Tab.Screen name="analysis" component={Analyses} options={{
+            title: 'Analyses',
             headerShown: false
 
           }} />
-      <Tab.Screen name="settings" component={Settings} options={{
+      {/* <Tab.Screen name="settings" component={Settings} options={{
             title: 'Configurações',
             headerShown: true,
             headerStyle: header,

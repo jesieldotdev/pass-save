@@ -22,6 +22,7 @@ export const Header = styled.View`
   margin-top: 20px;
   justify-content: space-between;
   padding-bottom: 8px;
+  margin-bottom: auto;
   /* From https://css.glass */
   /* background: rgba(255, 255, 255, 0.2); */
   /*border-radius: 16px;*/
